@@ -48,8 +48,9 @@ export async function POST(request: Request) {
   });
 
   if (error) {
+    // TEMPORARY debug: surface the real Resend error to diagnose delivery setup.
     return NextResponse.json(
-      { error: "Failed to send message. Please try again later." },
+      { error: "Failed to send message. Please try again later.", debug: error },
       { status: 502 }
     );
   }
