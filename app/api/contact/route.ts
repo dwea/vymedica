@@ -32,8 +32,7 @@ export async function POST(request: Request) {
   const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
     from: "Vymedica Website <onboarding@resend.dev>",
-    to: ["haiyany@gmila.com"],
-    cc: ["dweave@gmail.com"],
+    to: ["dweave@gmail.com"],
     replyTo: email,
     subject: `New contact form submission from ${name}`,
     text: [
